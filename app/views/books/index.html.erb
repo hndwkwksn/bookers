@@ -17,7 +17,7 @@
         <td><%= book.感想 %></td>
         <td><%= link_to "Show", book_path(book.id) %></td>
         <td><%= link_to "Edit", edit_book_path(book.id) %></td>
-        <td><a data-confirm="Are you sure?" class="destroy_76564" rel="nofollow" data-method="delete" href="/books/76564">Destroy</a></td>
+        <td><%= link_to "削除", book_path(book.id), method: :delete, "data-confirm" => "Are_you_sure?" %></td>
       </tr>
     <% end %>
   </tbody>
