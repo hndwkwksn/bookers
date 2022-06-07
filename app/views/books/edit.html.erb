@@ -1,21 +1,20 @@
 <h1>Editing Book</h1>
 
-<form class="edit_book" id="edit_book_76689" action="/books/76689" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="X/EtnIuSMko5iwu35dnnhZjhhBDkp0bAAxNh7PWqqiVPBfPk9cB/qD3TF/aWM7JncRmetOQRFJAM9OyQD7GH7A==">
-
+<%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
   <div class="field">
     <label for="book_title">Title</label>
-    <input class="book_title" type="text" value="データベース実践入門" name="book[title]" id="book_title">
+    <%= f.text_field :本のタイトル %>
   </div>
 
   <div class="field">
     <label for="book_body">Body</label>
-    <textarea class="book_body" name="book[body]" id="book_body">効率的なSQL文を教えてくれます</textarea>
+    <%= f.text_field :感想 %>
   </div>
 
   <div class="actions">
-    <input type="submit" name="commit" value="Update Book" data-disable-with="Update Book">
+    <%= f.submit '保存' %>
   </div>
-</form>
+<% end %>
 
 <a class="show_76689" href="/books/76689">Show</a> |
 <a class="back" href="/books">Back</a>
